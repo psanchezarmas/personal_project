@@ -1,4 +1,4 @@
-# personal_project
+# Personal Project
 
 Personal project doing data analysis and trying different kind of code. 
 
