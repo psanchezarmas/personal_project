@@ -9,6 +9,9 @@ import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, asc,desc
 
+import findspark
+findspark.init()
+
 spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 
 simpleData = [("James","Sales","NY",90000,34,10000), \
@@ -42,9 +45,8 @@ df.sort(df.department.asc(),df.state.desc()).show(truncate=False)
 df.sort(col("department").asc(),col("state").desc()).show(truncate=False)
 df.orderBy(col("department").asc(),col("state").desc()).show(truncate=False)
 
-
 df.createOrReplaceTempView("EMP")
-df.select("employee_name",asc("department"),desc("state"),"salary","age","bonus").show(truncate=False)
+#df.select("employee_name",asc("department"),desc("state"),"salary","age","bonus").show(truncate=False)
 
 spark.sql("select employee_name,department,state,salary,age,bonus from EMP ORDER BY department asc").show(truncate=False)
 

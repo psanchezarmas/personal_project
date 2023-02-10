@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+
 """
 
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+
 """
 
 from pyspark.sql import SparkSession

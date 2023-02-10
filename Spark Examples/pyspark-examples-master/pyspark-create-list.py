@@ -2,7 +2,7 @@
 '''
 Created on Sat Jan 11 19:38:27 2020
 
-@author: sparkbyexamples.com
+
 '''
 
 import pyspark

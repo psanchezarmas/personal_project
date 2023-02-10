@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+
 """
 
 import pandas as pd    
@@ -14,11 +14,18 @@ print(pandasDF)
 
 from pyspark.sql import SparkSession
 
+import findspark
+findspark.init()
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+'''
 spark = SparkSession.builder \
     .master("local[1]") \
     .appName("SparkByExamples.com") \
     .getOrCreate()
-
+'''
 sparkDF=spark.createDataFrame(pandasDF) 
 sparkDF.printSchema()
 sparkDF.show()
@@ -45,3 +52,5 @@ print(test)
 
 test123=spark.conf.get("spark.sql.execution.arrow.pyspark.fallback.enabled")
 print(test123)
+
+print('hola holita vecinito')
