@@ -1,0 +1,8 @@
+'''l - por donde voy
+
+n - next line
+
+s - entrar en la función
+
+import ipdb; ipdb.set_trace()
+'''
