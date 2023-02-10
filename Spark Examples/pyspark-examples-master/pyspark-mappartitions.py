@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-author SparkByExamples.com
+
 """
 
 from pyspark.sql import SparkSession
+import findspark
+findspark.init()
+
 spark = SparkSession.builder.appName('SparkByExamples.com').getOrCreate()
 data = [('James','Smith','M',3000),
   ('Anna','Rose','F',4100),
@@ -15,11 +18,17 @@ df = spark.createDataFrame(data=data, schema = columns)
 df.show()
 
 #Example 1 mapPartitions()
+
+print('-----------------Example 1-----------------')
 def reformat(partitionData):
     for row in partitionData:
         yield [row.firstname+","+row.lastname,row.salary*10/100]
 df.rdd.mapPartitions(reformat).toDF().show()
 
+print('-----------------Example 1-----------------')
+
+
+print('-----------------Example 2-----------------')
 #Example 2 mapPartitions()
 def reformat2(partitionData):
   updatedData = []
@@ -31,6 +40,7 @@ def reformat2(partitionData):
 
 df2=df.rdd.mapPartitions(reformat2).toDF("name","bonus")
 df2.show()
+print('-----------------Example 2-----------------')
 
 
 
