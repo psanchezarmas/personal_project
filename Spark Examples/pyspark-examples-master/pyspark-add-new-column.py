@@ -21,6 +21,7 @@ df.show()
 
 if 'salary1' not in df.columns:
     print("aa")
+
     
 # Add new constanct column
 from pyspark.sql.functions import lit
@@ -62,8 +63,3 @@ spark.sql("select firstname,salary, current_date() as today_date from PER").show
 spark.sql("select firstname,salary, " +
           "case salary when salary < 4000 then 'A' "+
           "else 'B' END as grade from PER").show()
-
-
-
-
-
