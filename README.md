@@ -6,5 +6,4 @@ I have also picked up code from different sources.
 
 I know as well, that if you came here, you also want to see my cats! The are pretty, aren't they?
 
-
-![my cats](https://github.com/psanchezarmas/personal_project/assets/59923173/9e66e41f-3faa-4679-a9bc-4d5706464985)
+![WhatsApp Image 2023-11-07 at 11 24 05](https://github.com/psanchezarmas/personal_project/assets/59923173/70eaa86c-8bcc-4d99-a7e5-c7e58062e8e9)
