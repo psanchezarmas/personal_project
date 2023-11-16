@@ -1,6 +1,7 @@
+import ipdb
 import openai
-import ipdb 
-openai.api_key = "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"
+
+openai.api_key = ""
 
 response = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",

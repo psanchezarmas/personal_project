@@ -1,14 +1,15 @@
 # importing required modules
-import PyPDF2
-from pathlib import Path
 import os
 from os import listdir
 from os.path import isfile, join
-import numpy as np
-import ipdb 
-import openai
+from pathlib import Path
 
-openai.api_key = "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"
+import ipdb
+import numpy as np
+import openai
+import PyPDF2
+
+openai.api_key = ""
 Files_Path = (Path.cwd())
 Files_Path = str(Files_Path) + "\CV Reader\CVs"
 Files_Path = Path(Files_Path)

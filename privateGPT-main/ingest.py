@@ -9,7 +9,7 @@ from langchain.vectorstores import Chroma
 from langchain.embeddings import LlamaCppEmbeddings
 from langchain.docstore.document import Document
 from constants import CHROMA_SETTINGS
-
+import ipdb
 
 load_dotenv()
 
@@ -37,16 +37,18 @@ def load_documents(source_dir: str) -> List[Document]:
 def main():
     # Load environment variables
     persist_directory = os.environ.get('PERSIST_DIRECTORY')
-    source_directory = os.environ.get('SOURCE_DIRECTORY', 'source_documents')
+    #source_directory = os.environ.get('', 'source_documents')
     llama_embeddings_model = os.environ.get('LLAMA_EMBEDDINGS_MODEL')
     model_n_ctx = os.environ.get('MODEL_N_CTX')
 
     # Load documents and split in chunks
-    print(f"Loading documents from {source_directory}")
-    documents = load_documents(source_directory)
+    #print(f"Loading documents from {source_directory}")
+    documents = open("C:/Proyectos/personal_project/privateGPT-main/source_documents/state_of_the_union.txt", 'r')
+    ipdb.set_trace()
+    #documents = load_documents("C:/Proyectos/personal_project/privateGPT-main/source_documents/state_of_the_union.txt")
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     texts = text_splitter.split_documents(documents)
-    print(f"Loaded {len(documents)} documents from {source_directory}")
+    print(f"Loaded {len(documents)} documents from ")
     print(f"Split into {len(texts)} chunks of text (max. 500 tokens each)")
 
     # Create embeddings
